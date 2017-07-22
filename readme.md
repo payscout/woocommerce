@@ -1,7 +1,7 @@
 Payscout is global merchant payment processor that allows merchants to process credit card transactions online. This plugin allow merchants to process credit card transaction via Payscout's 2.0 payment gateway using Woocommerce for Wordpress.
 
 
-##Features
+## Features
 1. Very Simple to add Payscout payment method to woocommerce/wordpress
 2. Little, to no technical skills required. Just install plugin and configure it to process online transactions.
 3. Add Transaction ID, Success Response, Response Reason to Order Note.
@@ -14,7 +14,7 @@ Payscout is global merchant payment processor that allows merchants to process c
 
 
 
-##Installation
+## Installation
 
 1. Upload 'woocommerce-payscout' folder to the '/wp-content/plugins/' directory
 2. Activate 'Payscout Payment Gateway for Woocommerce' from wp plugin lists in admin area
@@ -30,7 +30,7 @@ Payscout is global merchant payment processor that allows merchants to process c
 
 
 
-##Frequently Asked Questions
+## Frequently Asked Questions
 
 1. You need to have woocoommerce plugin installed to make this plugin work.
 2. You need to follow http://www.payscout.com -> Accounts ->  Get Client Username, Client Password and Client Token
@@ -42,7 +42,7 @@ Payscout is global merchant payment processor that allows merchants to process c
 8. This plugin does not support Refunds in woocommmerce interface
 
 
-##Support
+## Support
 1. Tel. 1.888.689.6088(TOLL FREE)
 2. Email : victor@payscout.com, support@payscout.com
 
