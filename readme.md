@@ -7,10 +7,9 @@ Payscout is global merchant payment processor that allows merchants to process c
 3. Add Transaction ID, Success Response, Response Reason to Order Note.
 4. Can be customized easily.
 5. Can work with sandbox/live accounts for testing purpose.
-6. This plugin currently Supports accepting in USD
-7. This plugin does not store Credit Card Details.
-8. This plugin allows you to accept the type of card you like with a dynamic card logo at checkout.
-9. Has support for default credit card features introduced by woocommerce.
+6. This plugin does not store Credit Card Details.
+7. This plugin allows you to accept the type of card you like with a dynamic card logo at checkout.
+8. Has support for default credit card features introduced by woocommerce.
 
 
 
