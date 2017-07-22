@@ -46,5 +46,5 @@ Payscout is global merchant payment processor that allows merchants to process c
 1. Tel. 1.888.689.6088(TOLL FREE)
 2. Email : victor@payscout.com, support@payscout.com
 
-[img1]: https://github.com/payscout/woocommerce/blob/master/screenshot-1.png
-[img1]: https://github.com/payscout/woocommerce/blob/master/screenshot-2.png
+[img1]: https://github.com/payscout/woocommerce/blob/master/woocommerce/screenshot-1.png
+[img1]: https://github.com/payscout/woocommerce/blob/master/woocommerce/screenshot-2.png
