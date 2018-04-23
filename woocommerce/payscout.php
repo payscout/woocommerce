@@ -3,7 +3,7 @@
  * Plugin Name: Payscout Payment Gateway for Woocommerce
  * Plugin URI: Plugin URI: https://wordpress.org/plugins/payscout_2_0/
  * Description: This plugin adds a payment option in WooCommerce for customers to pay with their Credit Cards Via Payscout.
- * Version: 2.5.0
+ * Version: 2.5.1
  * Author: Payscout Inc
  * Author URI: https://www.payscout.com/
  * License: GPLv2
@@ -40,17 +40,17 @@ function payscout_init()
 		
 		if($this->settings['transaction_server'] == 'live')  // FOR LIVE TRANSACTIONS
 			{
-				$this->trans_url 		= 'https://gateway.payscout.com/api/process';				
+				$this->trans_url 		= 'https://my.payscout.com/api/process';				
 				$this->client_username  = $this->settings['client_username'];
 				$this->client_password  = $this->settings['client_password'];
 				$this->client_token 	 = $this->settings['client_token'];				
 				
 			}else{				 // FOR TEST TRANSACTIONS
 			
-				$this->trans_url 	= 'https://mystaging.paymentecommerce.com/api/process';				
-				$this->client_username  = $this->settings['client_username'];
-				$this->client_password  = $this->settings['client_password'];
-				$this->client_token 	 = $this->settings['client_token'];	
+				$this->trans_url 	= 'https://preprod.payscout.com/api/process';				
+				$this->client_username  = 'victorAPI';
+				$this->client_password  = 'scout123!';
+				$this->client_token 	 = 'dd59e50945c2f2153ebf2559bc3fb4c5';	
 			
 			}      
         
@@ -252,7 +252,8 @@ function payscout_init()
 				'expiration_month'    => $exp_month,
 				'expiration_year'     => $exp_year,
 				'currency'			=> get_woocommerce_currency(),
-				'initial_amount'      => $wc_order->order_total,
+				'ip_address' => $_SERVER['REMOTE_ADDR'],
+				'initial_amount'      => number_format(floatval($wc_order->order_total), 2, '.', ''),
 				'billing_first_name'  => html_entity_decode($wc_order->billing_first_name, ENT_QUOTES, 'UTF-8'),
 				'billing_last_name'   => html_entity_decode($wc_order->billing_last_name, ENT_QUOTES, 'UTF-8'),				
 				'billing_email_address' => $wc_order->billing_email,				
@@ -350,12 +351,13 @@ function payscout_init()
 				
 				$wc_order->add_order_note( __( 'payment failed.'.str_replace("responsetext=", "", $content->status).'--'.'--', 'woocommerce' ) );
 				
-				$payment_error = $content->message;
-				
-				if(isset($content->raw_message) && $content->raw_message !="")
+				$payment_error = '';
+				if(isset($content->message)) $payment_error = $content->message;
+				if(!isset($content->message))
 				{
-					$payment_error = $content->raw_message;
-				}
+					if(isset($content->raw_message)) $payment_error = $content->raw_message;
+				}				
+				
 				
 				wc_add_notice('Error Processing Payments', $payment_error );
 			}
